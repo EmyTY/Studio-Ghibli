@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="keywords" content="Studio Ghibli, Anime, Japanese animation, My Neighboor Totoro, Studio Ghibli Collection, Koganei,">
+    <meta name="keywords" content="Студио Гибли, Филмография, Студио Гибли Филмография, Студио Гибли Анимации, Аниме, Моят съсед Тоторо, Коганеи">
+    <meta name="author" content="Емине Юмер">
+    <meta name="Description" content="Студио Гибли">
+    <meta name="description" content="Открийте омагьосващия свят на Студио Гибли! Разгледайте пълната филмография, задкулисни детайли и магическото изкуство на най-обичаното анимационно студио в Япония. Научете повече за техните вечни шедьоври и вдъхновяващи истории.">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="contact.css">
+    <title>Контакти</title>
+</head>
+<body>
+<header>
+    <div class="header">
+        <a href="#default" class="logo"><img src="Studio-Ghibli-Logo-1985.png" alt="" style="height: 50px;"></a>
+        <div class="header-right">
+          <a  href="index.html">Начало</a>
+          <a href="filmography.html">Филмография</a>
+          <a href="about.html">За нас</a>
+          <a class="active" href="contact.html">Контакти</a>
+        </div>
+    </div>
+    <div class="ghibli-text" style="padding-left: 30px">
+      <div class="ghibli-intro">
+        <h1 class="h1"><b>Контакти</b></h1>
+        <p class="p-1">Където започва въображението</p>
+      </div>
+    </div>
+</header>
+<h3 class="h3-form">Форма за Контакт</h3>
+
+<div class="container">
+  <form action="/action_page.php">
+    <label for="fname">Име</label>
+    <input type="text" id="fname" name="firstname" placeholder="Вашето име..">
+
+    <label for="lname">Фамилия</label>
+    <input type="text" id="lname" name="lastname" placeholder="Вашата фамилия..">
+
+    <label for="country">Държава</label>
+    <select id="country" name="country">
+    <option value="bulgaria">България</option>
+    <option value="australia">Австралия</option>
+    <option value="canada">Канада</option>
+    <option value="usa">САЩ</option>
+    <option value="japan">Япония</option>
+    <option value="germany">Германия</option>
+    <option value="france">Франция</option>
+    <option value="italy">Италия</option>
+    </select>
+
+    <label for="subject">Тема</label>
+    <textarea id="subject" name="subject" placeholder="Напишете нещо.." style="height:200px"></textarea>
+
+    <input type="submit" value="Изпрати">
+  </form>
+</div>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const textElements = document.querySelectorAll('.ghibli-intro h1, .ghibli-intro p, .button-1, .card, .mission-card');
+        textElements.forEach((el, index) => {
+            el.style.opacity = 0;
+            el.style.transition = `opacity 0.6s ease-in-out ${index * 0.2}s`;
+            el.style.opacity = 1;
+        });
+    
+        const scrollToTopButton = document.createElement('button');
+        scrollToTopButton.textContent = '⬆️';
+        scrollToTopButton.classList.add('scroll-to-top');
+        document.body.appendChild(scrollToTopButton);
+    
+        scrollToTopButton.style.position = 'fixed';
+        scrollToTopButton.style.bottom = '20px';
+        scrollToTopButton.style.right = '20px';
+        scrollToTopButton.style.padding = '10px';
+        scrollToTopButton.style.borderRadius = '50%';
+        scrollToTopButton.style.border = 'none';
+        scrollToTopButton.style.backgroundColor = '#000';
+        scrollToTopButton.style.color = '#fff';
+        scrollToTopButton.style.cursor = 'pointer';
+        scrollToTopButton.style.display = 'none';
+    
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                scrollToTopButton.style.display = 'block';
+            } else {
+                scrollToTopButton.style.display = 'none';
+            }
+        });
+    
+        scrollToTopButton.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    });
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            document.querySelector(this.getAttribute('href')).scrollIntoView({
+                behavior: 'smooth'
+            });
+        });
+    });
+    
+    const cards = document.querySelectorAll('.card');
+    cards.forEach(card => {
+        card.addEventListener('mouseover', () => {
+            card.style.transform = 'scale(1.05)';
+            card.style.transition = 'transform 0.3s';
+        });
+        card.addEventListener('mouseout', () => {
+            card.style.transform = 'scale(1)';
+        });
+    });
+    
+    const faders = document.querySelectorAll('.card, .mission-card');
+    const appearOptions = {
+        threshold: 0,
+        rootMargin: "0px 0px -100px 0px"
+    };
+    
+    const appearOnScroll = new IntersectionObserver(function (entries, appearOnScroll) {
+        entries.forEach(entry => {
+            if (!entry.isIntersecting) {
+                return;
+            } else {
+                entry.target.classList.add('appear');
+                appearOnScroll.unobserve(entry.target);
+            }
+        });
+    }, appearOptions);
+    
+    faders.forEach(fader => {
+        appearOnScroll.observe(fader);
+    });
+    </script>
+</body>
+<footer>
+    <div class="footer">
+        <div class="footer-center">
+            <a href="https://www.facebook.com/StudioGhibli" target="_blank"><img src="fb.png" alt="Facebook" style="height: 30px;"></a>
+            <a href="https://www.instagram.com/studioghibliofficial" target="_blank"><img src="ig.png" alt="Instagram" style="height: 30px;"></a>
+            <a href="https://twitter.com/JP_GHIBLI" target="_blank"><img src="X.png" alt="X" style="height: 30px;"></a>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>© 2025 Студио Гибли. Всички права запазени.</p>
+    </div>
+</footer>
+</html>
