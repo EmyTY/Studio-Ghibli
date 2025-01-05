@@ -220,18 +220,18 @@ footer a.active {
 .mission-text h2{
     text-align: justify;
     font-size: 40px;
-    color: white;
+    color: black;
     margin-bottom: 10px;
     font-weight: bold;
 }
 .p-mission{
     text-align: justify;
-    color: lightgrey;
+    color: darkgrey;
     font-style: italic;
 }
 .p-caption{
     text-align: center;
-    color: lightgrey;
+    color: darkgrey;
     font-size: 14px;
     font-style: italic;
 }
