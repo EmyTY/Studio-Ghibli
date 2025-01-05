@@ -12,7 +12,7 @@ body{
   
   .header a {
     float: left;
-    color: rgba(211, 211, 211, 0.7);
+    color: darkgrey;
     text-align: center;
     padding: 12px;
     text-decoration: none;
@@ -64,7 +64,7 @@ body{
 }
 
 footer a {
-    color: rgba(211, 211, 211, 0.7);
+    color: darkgrey;
     text-align: center;
     padding: 12px;
     text-decoration: none;
